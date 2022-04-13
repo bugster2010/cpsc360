@@ -16,31 +16,83 @@ def refresh(width, height):
 
 def question1():
 
+
+    # line strip
+    glColor3f(0, 0, 1.0)
+    glLineWidth(7.5)  
+    # code
+    glBegin(GL_LINE_STRIP)
+    glVertex3f(50.0, 50.0, 0.0)                                             
+    glVertex3f(150.0, 350.0, 0.0)                                           
+    glVertex3f(250.0, 50.0, 0.0)                                            
+    glVertex3f(350.0, 350.0, 0.0)                                           
+    glVertex3f(450.0, 50.0, 0.0)                                            
+    glEnd()
+    
+    # Points
+    glColor3f(1.0, 0, 0.0)
+    glPointSize(15.0)
+    glBegin(GL_POINTS)
+    glVertex3f(50.0, 50.0, 0.0)                                             
+    glVertex3f(150.0, 350.0, 0.0)                                           
+    glVertex3f(250.0, 50.0, 0.0)                                            
+    glVertex3f(350.0, 350.0, 0.0)                                           
+    glVertex3f(450.0, 50.0, 0.0)   
+    glEnd()
     print("assignment 13.1")
+
+
 
 def question2():
     # draw the rectangle
-    glColor3f(0.2, 0.5, 0.4)
-    glPolygonMode(GL_FRONT_AND_BACK, GL_FILL)                               # color can also be specified for each vertex
-    glBegin(GL_POLYGON)
-    glVertex3f(150.0, 50.0, 0.0)                                            # v0
-    glVertex3f(350.0, 50.0, 0.0)                                            # v1
-    glVertex3f(350.0, 450.0, 0.0)                                           # v2
-    glVertex3f(150.0, 450.0, 0.0)                                           # v3
-    glEnd()
+    #glColor3f(0.2, 0.5, 0.4)
+    #glPolygonMode(GL_FRONT_AND_BACK, GL_FILL)                               # color can also be specified for each vertex
+    #glBegin(GL_POLYGON)
+    #glVertex3f(150.0, 50.0, 0.0)                                            # v0
+    #glVertex3f(350.0, 50.0, 0.0)                                            # v1
+    #glVertex3f(350.0, 450.0, 0.0)                                           # v2
+    #glVertex3f(150.0, 450.0, 0.0)                                           # v3
+    #glEnd()
 
     # draw the vertices
-    glColor3f(0.0, 0.0, 0.0)
-    glPointSize(10.0)
-    glBegin(GL_POINTS)
-    glVertex3f(150.0, 50.0, 0.0)                                            # v0
-    glVertex3f(350.0, 50.0, 0.0)                                            # v1
-    glVertex3f(350.0, 450.0, 0.0)                                           # v2
-    glVertex3f(150.0, 450.0, 0.0)                                           # v3
-    glEnd()
+    #glColor3f(0.0, 0.0, 0.0)
+    #glPointSize(10.0)
+    #glBegin(GL_POINTS)
+    #glVertex3f(150.0, 50.0, 0.0)                                            # v0
+    #glVertex3f(350.0, 50.0, 0.0)                                            # v1
+    #glVertex3f(350.0, 450.0, 0.0)                                           # v2
+    #glVertex3f(150.0, 450.0, 0.0)                                           # v3
+    #glEnd()
 
     # TODO triangulation with 8 triangles
 
+        # line strip
+    glColor3f(0, 0, 1.0)
+    glLineWidth(7.5)  
+    # code
+    # NOTICE THAT GL LINES REQUIRES EACH VERTEX SPECIFIED EACH TIME TO DRAW LINE, why same vertex is declared multiple times
+    glBegin(GL_LINES)
+    glVertex3f(50.0, 50.0, 0.0)                                             
+    glVertex3f(150.0, 350.0, 0.0)
+    glVertex3f(150.0, 350.0, 0.0)                                              
+    glVertex3f(250.0, 50.0, 0.0)
+    glVertex3f(250.0, 50.0, 0.0)                                            
+    glVertex3f(350.0, 350.0, 0.0)
+    glVertex3f(350.0, 350.0, 0.0)                                             
+    glVertex3f(450.0, 50.0, 0.0)                                            
+    glEnd()
+    
+    # Points
+    glColor3f(1.0, 0, 0.0)
+    glPointSize(15.0)
+    glBegin(GL_POINTS)
+    glVertex3f(50.0, 50.0, 0.0)                                             
+    glVertex3f(150.0, 350.0, 0.0)                                           
+    glVertex3f(250.0, 50.0, 0.0)                                            
+    glVertex3f(350.0, 350.0, 0.0)                                           
+    glVertex3f(450.0, 50.0, 0.0)   
+    glEnd()
+    print("assignment 13.1")
 
     print("assignment 13.2")
     
@@ -55,11 +107,11 @@ def draw():                                                                 # Th
 
     # assignment 13.1
     # TODO write your code in the function below
-    question1()
+    #question1()
 
     # assignment 13.2
     # TODO write your code in the function below
-    #question2()
+    question2()
 
     glutSwapBuffers()                                                       # import for double-buffering
 
@@ -68,7 +120,7 @@ def main():
     glutInitDisplayMode(GLUT_RGBA | GLUT_DOUBLE | GLUT_ALPHA | GLUT_DEPTH)  # set display mode of display-window
     glutInitWindowPosition(0, 0)                                            # set top-left display-window position
     glutInitWindowSize(width, height)                                       # set display-window size
-    window = glutCreateWindow("cpsc 360 - Trudi Qi")                        # create window with title
+    window = glutCreateWindow("cpsc 360 - Matthew Graham")                  # create window with title
     glutDisplayFunc(draw)                                                   # display graphic content and wait
     glutMainLoop()                                                          # must be called at last; display graphics and put program into infinite loop
 
